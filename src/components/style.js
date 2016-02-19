@@ -4,8 +4,10 @@ var styles = StyleSheet.create({
   container: {
     alignItems:'center',
     paddingTop:50,
+    flexDirection:'row',
   },
   threads: {
+    flex: 1,
     backgroundColor: '#262626',
     borderRadius: 5,
     padding: 5,
@@ -19,6 +21,7 @@ var styles = StyleSheet.create({
     margin: 5,
   },
   messages: {
+    flex: 2,
     backgroundColor: '#262626',
     borderRadius: 5,
     padding: 5,
@@ -34,7 +37,7 @@ var styles = StyleSheet.create({
   name: {
     //fontFamily: 'HeveticaNeue-Medium',
     color: '#262626',
-    fontSize:18,
+    fontSize:13,
     marginBottom:5,
   },
   dateTime: {
@@ -46,9 +49,15 @@ var styles = StyleSheet.create({
   message: {
     //fontFamily: 'HeveticaNeue',
     color: '#262626',
-    fontSize:16,
+    fontSize:8,
     marginBottom:5,
   },
-
+  input: {
+    color: '#262626',
+    fontSize:8,
+    marginBottom:5,
+    height: 10,
+    //width: 20,
+  },
 });
 export default styles;

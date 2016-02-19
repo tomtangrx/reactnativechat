@@ -1,4 +1,5 @@
-import React, { PropTypes, Component, TextInput} from 'react-native';
+import React, { PropTypes, Component, TextInput,View} from 'react-native';
+import styles from './style';
 
 let ENTER_KEY_CODE = 13;
 
@@ -6,24 +7,39 @@ class MessageComposer extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {text: ''};
+    this.state = {text: '',placeholder:'请输入文字'};
   }
 
   render() {
+    console.log(this.props);
     return (
-      <TextInput
+
+      <View style={styles.messageContainer} >
+      <TextInput style={styles.input}
         name="message"
         value={this.state.text}
-        onChange={this._onChange.bind(this)}
-        onKeyDown={this._onKeyDown.bind(this)}
+        onChangeText={this._onChangeText.bind(this)}
+        onSubmitEditing={this._onSubmitEditing.bind(this)}
+        placeholder={this.state.placeholder}
       />
+      </View>
     );
   }
 
-  _onChange(event, value) {
-    this.setState({text: event.target.value});
-  }
+  _onChangeText(text) {
 
+    console.log('text:');
+    console.log(text);
+    this.setState({text: text});
+  }
+  _onSubmitEditing(event) {
+    let text = this.state.text.trim();
+    if (text) {
+      const { threads, messages, currentThreadID } = this.props;
+      this.props.postNewMessage(text, this.props.currentThreadID);
+    }
+    this.setState({text: ''});
+  }
   _onKeyDown(event) {
     if (event.keyCode === ENTER_KEY_CODE) {
       event.preventDefault();
@@ -38,7 +54,7 @@ class MessageComposer extends Component {
 };
 
 MessageComposer.propTypes = {
-  currentThreadID: PropTypes.string.isRequired
+  //currentThreadID: PropTypes.string.isRequired
 };
 
 export default MessageComposer;

@@ -30,6 +30,14 @@ var messages = [
     authorName: 'Jing',
     text: 'Sounds good.  Will they be serving dessert?',
     timestamp: Date.now() - 79999
+  },
+  {
+    id: 'm_4',
+    threadID: 't_2',
+    threadName: 'tang and Bill',
+    authorName: 'Bill',
+    text: '测试消息',
+    timestamp: Date.now() - 88888
   }
 
 ];

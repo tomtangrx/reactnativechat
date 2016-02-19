@@ -27,14 +27,19 @@ export default class MessageSection extends Component {
           <Text>{currentThread.threadName}</Text>
           <View ref="messageList">
             {messageListItems}
+            <MessageComposer
+              {...this.props}
+            />
           </View>
-          <MessageComposer
-            {...this.props}
-          />
+
         </View>
       );
     } else {
-      return <View style={styles.messages}><Text></Text></View>;
+      return (<View style={styles.messages}><Text></Text>
+      <MessageComposer
+        {...this.props}
+      />
+      </View>);
     }
   }
 

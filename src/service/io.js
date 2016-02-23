@@ -1,6 +1,6 @@
 //import React from 'react-native';
 //window.navigator.userAgent = 'react-native';
-import './userAgent';
+import './userAgent'; // socket.io need 
 import socket from 'socket.io-client/socket.io';
 import { requestRawMessages, showCongratulation,receiveAll,createMessage,receiveCreatedMessage } from '../actions/index';
 

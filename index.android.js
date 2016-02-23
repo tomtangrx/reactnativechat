@@ -1,4 +1,4 @@
-
+'use strict';
 import React, {
   AppRegistry
 } from 'react-native';

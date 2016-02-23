@@ -1,4 +1,5 @@
-import 'babel-polyfill';
+//import 'babel-polyfill'; // saga
+import 'es6-symbol/implement';  // saga
 import React, {Component} from 'react-native';
 import { Provider } from 'react-redux';
 import ChatApp from '../components/ChatApp.react';

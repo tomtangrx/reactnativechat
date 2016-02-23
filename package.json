@@ -9,6 +9,7 @@
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "classnames": "^2.2.3",
+    "es6-symbol": "^3.0.2",
     "express": "^4.13.3",
     "lodash": "^3.10.1",
     "react-native": "^0.20.0",

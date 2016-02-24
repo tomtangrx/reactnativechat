@@ -56,8 +56,12 @@ var styles = StyleSheet.create({
     color: '#262626',
     fontSize:8,
     marginBottom:5,
-    height: 10,
+    height: 20,
     //width: 20,
   },
+  inputNew: {
+    color: 'red',
+  }
+
 });
 export default styles;

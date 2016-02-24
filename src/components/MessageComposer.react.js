@@ -11,11 +11,9 @@ class MessageComposer extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
-
       <View style={styles.messageContainer} >
-      <TextInput style={styles.input}
+      <TextInput style={[styles.input,styles.inputNew]}
         name="message"
         value={this.state.text}
         onChangeText={this._onChangeText.bind(this)}
@@ -27,9 +25,6 @@ class MessageComposer extends Component {
   }
 
   _onChangeText(text) {
-
-    console.log('text:');
-    console.log(text);
     this.setState({text: text});
   }
   _onSubmitEditing(event) {

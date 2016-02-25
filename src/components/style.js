@@ -13,6 +13,7 @@ var styles = StyleSheet.create({
     padding: 5,
     flexDirection:'column',
     alignItems:'stretch',
+    top: 1,
   },
   thread: {
     backgroundColor: '#FEFEFE',
@@ -59,9 +60,31 @@ var styles = StyleSheet.create({
     height: 20,
     //width: 20,
   },
+  /* 测试样式是否会被后一个覆盖 */
   inputNew: {
     color: 'red',
-  }
+  },
+  tabContainer: {
+    flex: 1,
+    marginTop: 30,
+  },
+  tabView: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: 'rgba(0,0,0,0.01)',
+  },
+  card: {
+    borderWidth: 1,
+    backgroundColor: '#fff',
+    borderColor: 'rgba(0,0,0,0.1)',
+    margin: 5,
+    height: 150,
+    padding: 15,
+    shadowColor: '#ccc',
+    shadowOffset: {width: 2, height: 2},
+    shadowOpacity: 0.5,
+    shadowRadius: 3,
+  },
 
 });
 export default styles;

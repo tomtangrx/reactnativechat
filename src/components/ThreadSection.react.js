@@ -12,6 +12,7 @@ export default class ThreadSection extends Component {
       if (!lastMessage.isRead) {
         unreadCount += 1;
       }
+      console.log(this.props.gotoPage);
       return (
         <ThreadListItem
           key={id}

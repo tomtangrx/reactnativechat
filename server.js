@@ -37,7 +37,7 @@ var messages = [
     threadName: 'tang and Bill',
     authorName: 'Bill',
     text: '测试消息',
-    timestamp: Date.now() - 88888
+    timestamp: Date.now() - 678
   }
 
 ];

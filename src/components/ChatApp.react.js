@@ -1,27 +1,41 @@
-import React, { Component, PropTypes,Text ,View } from 'react-native';
+import React, { Component, PropTypes,Text ,ScrollView, View } from 'react-native';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions';
 import MessageSection from './MessageSection.react';
 import ThreadSection from './ThreadSection.react';
 import styles from './style';
+import ScrollableTabView from 'react-native-scrollable-tab-view';
+let {ScrollableTabBar,DefaultTabBar} =  ScrollableTabView;
 
 class ChatApp extends Component {
 
   render() {
     return (
-      <View >
-        <View style={styles.container}>
-          <ThreadSection
-           {... this.props}
-          />
-          <MessageSection
-            {... this.props}
-          />
+        <View style={styles.tabContainer}>
+          <ScrollableTabView ref={(ref) => this.tabs = ref} initialPage={0} renderTabBar={() => <DefaultTabBar />}>
+            <ScrollView tabLabel="聊天室" style={styles.tabView}>
+              <View style={styles.card}>
+                <ThreadSection
+                    {... this.props}
+                    goToPage={this._goToPage.bind(this)}
+                    />
+              </View>
+            </ScrollView>
+            <ScrollView tabLabel="聊天记录" style={styles.tabView}>
+              <View style={styles.card}>
+                <MessageSection
+                    {... this.props}
+                    />
+              </View>
+            </ScrollView>
+          </ScrollableTabView>
         </View>
-
-      </View>
     );
+  }
+  _goToPage() {
+    //console.log(this.tabs);
+    this.tabs.goToPage(1);
   }
 
 };

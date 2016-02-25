@@ -49,7 +49,7 @@ class MessageComposer extends Component {
 };
 
 MessageComposer.propTypes = {
-  //currentThreadID: PropTypes.string.isRequired
+  currentThreadID: PropTypes.string.isRequired
 };
 
 export default MessageComposer;

@@ -33,9 +33,9 @@ class ChatApp extends Component {
         </View>
     );
   }
-  _goToPage() {
+  _goToPage(n) {
     //console.log(this.tabs);
-    this.tabs.goToPage(1);
+    this.tabs.goToPage(n);
   }
 
 };

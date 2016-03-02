@@ -9,7 +9,7 @@ app.get("/css/chatapp.css", function(req, res) {
   res.sendFile(__dirname + '/css/chatapp.css')
 })
 app.use(function(req, res) {
-  res.sendFile(__dirname + '/index.html')
+  res.sendFile(__dirname + '/indexupload.html')
 })
 
 /*

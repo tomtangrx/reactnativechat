@@ -1,5 +1,5 @@
 import React, { Component,Text,View } from 'react-native';
-import ThreadListItem from '../components/ThreadListItem.react';
+import ThreadListItem from './ThreadListItem.react';
 import styles from './style';
 
 export default class ThreadSection extends Component {

@@ -35,7 +35,7 @@ class ThreadListItem extends Component {
         ]
     );
     */
-    this.props.goToPage(1);
+    this.props.goToPage();
     this.props.clickThread(this.props.thread.id);
   }
 

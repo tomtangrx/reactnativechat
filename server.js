@@ -5,6 +5,7 @@ var app = new express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.use(express.static(path.join(__dirname, 'dist')));
+
 var messages = [
   {
     id: 'm_1',
@@ -53,8 +54,20 @@ var threadNameMap = (function () {
   return map;
 })();
 
+/* 文件上传 代码 开始 */
+//app.use(express.bodyParser({uploadDir: './uploads'}));
+
+app.post('/file-upload',function(req,res,next){
+  //debugger;
+  console.log(req);
+  console.log(req.body);
+  console.log(req.files);
+  //console.log(res);
+});
+/* 文件上传代码结束 */
+
 /**
- * start Primus
+ * start io
  */
 var server = http.createServer(app);
 //var rtg = require('url').parse(process.env.REDISTOGO_URL || 'redis://localhost:6379');
@@ -94,6 +107,7 @@ io.on('connection', function(socket){
   });
 
 });
+
 
 // start the server
 server.listen(app.get('port'), function(error){

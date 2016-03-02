@@ -9,12 +9,14 @@ var defaultUrl;
 try {
   if (location.origin) {
     //defaultUrl = location.origin;
-    defaultUrl = 'http://localhost:3000';
+    //defaultUrl = 'http://localhost:3000';
+    defaultUrl = 'http://192.168.1.121:3000';
   } else {
     defaultUrl = location.protocol +'//'+ location.hostname + (location.port ? ':'+ location.port : '');
   }
 } catch (e) {
-  defaultUrl = 'http://localhost:3000';
+  //defaultUrl = 'http://localhost:3000';
+  defaultUrl = 'http://192.168.1.121:3000';
 }
 let _store;
 console.log(defaultUrl);
